@@ -1,0 +1,511 @@
+@import "style_reset";
+@import "style";
+
+//mixins
+
+@mixin flex{
+  display: flex;
+  display: -webkit-flex;
+}
+@mixin flex-flow-row-wrap{
+  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+}
+@mixin flex-flow-row-nowrap{
+  flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+}
+@mixin flex-flow-column{
+  flex-flow: column;
+  -webkit-flex-flow: column;
+}
+@mixin justify-content{
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+@mixin wrapper_image{
+  position: relative;
+  @include justify-content;
+  overflow: hidden;
+}
+@mixin absolute_image_position{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+}
+
+//variables
+$background-color-coral: coral;
+$background-color-cadetblue: cadetblue;
+$background-color-dark: grey;
+$font-color-black: black;
+$font-color-white: white;
+$background-color-gainsboro: gainsboro;
+
+
+//base
+*{
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Times New Roman","Times", serif;
+}
+body{
+  width: 100%;
+}
+.wrapper{
+  width: 100%;
+  @include flex;
+  @include flex-flow-column;
+}
+//header
+header{
+  width: 100%;
+  @include flex;
+  @include flex-flow-row-nowrap;
+  background-color: $background-color-coral;
+  align-items: center;
+
+}
+.header_logo{
+  background-color: $background-color-cadetblue;
+  @include wrapper_image;
+  width: 21.3%;
+  padding-bottom: 5.68%;
+      img{
+        @include absolute_image_position;
+        padding-top: 9%;
+        padding-left: 33.33%;
+        padding-right: 8%;
+      }
+}
+.header_center{
+  margin-left: 1.91%;
+  font-size: 2.13vw;
+}
+.header_contacts{
+  @include flex;
+  @include flex-flow-row-nowrap;
+  align-items: center;
+  width: 21.73%;
+  margin-left: auto;
+  margin-right: 7.1%;
+}
+.header_contacts_picture{
+  width: 24.18%;
+  text-align: right;
+    img{
+      width: 52.7%;
+    }
+}
+.header_contacts_numbers{
+  width: 75.82%;
+  @include flex;
+  @include flex-flow-column;
+  font-size: 2.77vw;
+  text-align: right;
+    a{
+      text-decoration: none;
+      color: $font-color-black;
+        &:hover{
+          color: white;
+        }
+        &:visited{
+          color: $font-color-black;
+        }
+    }
+}
+@media all and (max-width: 700px) {
+  .header_logo{
+    width: 31.95%;
+    padding-bottom: 7.7%;
+      img{
+        padding-left: 22.22%;
+        padding-top: 6.5%;
+      }
+  }
+  .header_center{
+    display: none;
+  }
+  .header_contacts{
+    width: 50%;
+  }
+  .header_contacts_picture{
+    width:60%;
+      img{
+        width: 22%;
+        margin-right: 10%;
+      }
+  }
+  .header_contacts_numbers{
+    width: 40%;
+    font-size: 3.5vw;
+  }
+}
+
+//about_us article
+.about_us{
+  @include flex;
+  @include flex-flow-column;
+  background-color: $background-color-dark;
+  width: 100%;
+}
+.about_us_title, .about_us_content, .about_us_resume, .about_us_button{
+  margin-left: 7.1%;
+  margin-right: 7.1%;
+  width: calc(100% - 7.1% - 7.1%);
+}
+.about_us_title{
+  text-align: center;
+  color: $font-color-white;
+  font-size: 2vw;
+  margin-bottom: 4.4%;
+}
+.about_us_content{
+  @include flex;
+  @include flex-flow-column;
+}
+.about_us_content_block1{ //consists of 6 small half-string blocks
+  @include flex;
+  @include flex-flow-row-wrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  color: $background-color-coral;
+}
+.block1_element{
+  @include flex;
+  @include flex-flow-row-nowrap;
+  width: 30.63%;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  margin-bottom: 1.4%;
+  align-items: center;
+
+    @media all and (max-width: 770px) {
+      width: 100%;
+  }
+}
+.block1_element_picture{
+  width: 10.81%;
+  margin-right: 5.4%;
+    img{
+      width: 100%;
+    }
+  @media all and (max-width: 770px){
+    width: 5%;
+  }
+}
+.block1_element_text{
+  width: calc(100% - 10.81% - 5.4%);//block1_element_picture size and margin-right
+  text-align: left;
+  font-size: 2vw;
+
+
+    @media all and (max-width: 770px) {
+      font-size: 3.5vw;
+      width: calc(100% - 5% - 5.4%);
+    }
+}
+
+.about_us_content_block2{
+  @include flex;
+  @include flex-flow-row-nowrap;
+  width: 100%;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  align-items: center;
+}
+
+.block2_element_picture{
+  width: 3.31%;
+  margin-right: 1.656%;
+  img{
+    width: 100%;
+  }
+  @media all and (max-width: 770px){
+    width: 5%;
+    margin-right: 5.4%;
+  }
+}
+.block2_element_text{
+  width: calc(100% - 3.31% - 1.65%);//block2_element_picture size and margin-right
+  text-align: left;
+  font-size: 2vw;
+  color: $background-color-coral;
+
+
+  @media all and (max-width: 770px) {
+    font-size: 3.5vw;
+    width: calc(100% - 5% - 5.4%);
+  }
+}
+
+.about_us_resume{
+  color: $font-color-white;
+  font-size: 4vw;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  padding: 2%;
+  padding-bottom: 1%;
+}
+
+.about_us_button{//button
+  @include flex;
+  @include justify-content;
+  margin-bottom: 6%;
+}
+.button{
+  text-decoration: none;
+  padding: 1.4% 4.5%;
+  background-color: $background-color-coral;
+  color: $font-color-black;
+  border-radius: 30%;
+  font-size: 2vw;
+    &:hover{
+          background-color: $font-color-white;
+        }
+}
+//our_advantages article
+.our_advantages{
+  margin-top: 0;
+  width: 100%;
+  background-color: $background-color-gainsboro;
+  min-height: 100vh;
+  @include flex;
+  @include justify-content;
+  @include flex-flow-column;
+}
+.our_advantages_wrapper{
+  @include flex;
+  @include flex-flow-column;
+  margin-left: 7.1%;
+  margin-right: 7.1%;
+  width: calc(100% - 7.1% - 7.1%);
+}
+.our_advantages_title{
+  width: 100%;
+  text-align: center;
+    p{
+      font-size: 2vw;
+      color: $font-color-black;
+      padding-top: 1.2%;
+    }
+}
+.our_advantages_items{
+  @include flex;
+  @include flex-flow-row-wrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.our_advantages_items_item {
+  width: 23.4%;
+  padding: 2% 1%;
+  @include flex;
+  @include flex-flow-column;
+  align-items: flex-start;
+  background-color: $font-color-white;
+  border-top: $background-color-coral 2px solid;
+  color: $font-color-black;
+  margin-top: 2%;
+
+  ul {
+    list-style: none;
+    margin-left: -11%;
+
+    li {
+      position: relative;
+      padding-left: 6%;
+      font-size: 1.5vw;
+    }
+
+    li:before {
+      content: '✔';
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: $background-color-coral;
+    }
+  }
+
+  @media all and (max-width: 770px) {
+    width: 100%;
+
+      ul{
+        margin-left: 0;
+
+        li{
+          font-size: 2vw;
+        }
+      }
+  }
+}
+.item_title{
+  font-size: 2vw;
+  font-weight: bold;
+  width: 100%;
+    p{
+      margin-left: 10%;
+      margin-top: -4%;
+
+      @media all and (max-width: 770px) {
+        margin-top: 2%;
+      }
+    }
+}
+.our_advantages_button2{
+  margin-top: 4%;
+  margin-left: 7.1%;
+  margin-right: 7.1%;
+  width: calc(100% - 7.1% - 7.1%);
+  @include flex;
+  @include justify-content;
+    a{
+      text-decoration: none;
+      font-size: 2vw;
+      color: $font-color-black;
+      padding: 1.4% 7.45%;
+      background-color: $background-color-coral;
+      border-radius: 30%;
+      &:hover{
+        background-color: $font-color-white;
+      }
+    }
+}
+//our services
+.our_services{
+  width: 100%;
+  padding-top: 5%;
+  @include flex;
+  @include flex-flow-column;
+  background-color: $font-color-white;
+  padding-bottom: 5%;
+  min-height: 40vh;
+  margin-bottom: auto;
+}
+.serviсe_title{
+  margin-left: 7.1%;
+  margin-right: 7.1%;
+  width: calc(100% - 7.1% - 7.1%);
+  text-align: center;
+  font-size: 3vw;
+  margin-bottom: 4%;
+}
+section{
+  margin-left: 7.1%;
+  margin-right: 7.1%;
+  width: calc(100% - 7.1% - 7.1%);
+  @include flex;
+  @include flex-flow-column;
+}
+.service_name{
+  width: 100%;
+  padding-top: 1.3%;
+  padding-bottom: 1.3%;
+  padding-left: 1.3%;
+  background-color: $background-color-cadetblue;
+  border-bottom: 2px solid $background-color-dark;
+  border-top: 2px solid $background-color-dark;
+  color: $font-color-white;
+  font-size: 2vw;
+
+  @media all and (max-width: 770px){
+    font-size: 3vw;
+  }
+}
+.service_list{
+  width: 100%;
+  padding-top: 1.8%;
+  padding-bottom: 1.8%;
+  padding-left: 1.8%;
+  background-color: $background-color-gainsboro;
+  color: $font-color-black;
+  font-size: 2vw;
+
+  @media all and (max-width: 770px){
+    font-size: 3vw;
+  }
+}
+//contacts
+.contacts{
+  margin-top: 5%;
+  width: 100%;
+  @include flex;
+  @include flex-flow-column;
+  @include justify-content;
+  background-color: $background-color-dark;
+  position: relative;
+}
+.map{
+  width: 100%;
+  padding-bottom: 30%;
+  @include flex;
+  position: relative;
+  @include justify-content;
+  overflow: hidden;
+
+    iframe{
+      @include absolute_image_position;
+      width: 100%;
+      height: 100%;
+    }
+}
+
+.phones {
+  margin-top: 4%;
+  margin-left: 7.1%;
+  margin-right: 7.1%;
+  width: calc(100% - 7.1% - 7.1%);
+  @include flex;
+  @include flex-flow-column;
+  @include justify-content;
+  margin-bottom: 2%;
+
+  @media all and (min-width: 770px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    z-index: 999;
+    margin-top: 0;
+    background-color: $background-color-dark;
+  }
+}
+
+.order_call{
+  margin-bottom: 2%;
+  @include flex;
+  @include justify-content;
+
+}
+.order_call a {
+  text-decoration: none;
+  font-size: 2vw;
+  color: $font-color-black;
+  padding: 1.6% 3.6% 1.8% 3.6%;
+  background-color: $background-color-coral;
+  border-radius: 30%;
+
+  &:hover {
+    background-color: $font-color-white;
+    color: $font-color-black;
+  }
+}
+.phone_numbers{
+  color: $font-color-white;
+  font-size: 3vw;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+    a{
+      text-decoration: none;
+      color: $font-color-white;
+    }
+
+  @media all and (min-width: 770px) {
+    font-size: 2vw;
+  }
+}

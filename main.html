@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style_finish.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cashe">
+    <meta http-equiv="express" content="Tue.01 Jan 2018 02:00:00 6MT">
     <title>Title</title>
 </head>
 <body>
@@ -93,7 +95,7 @@
                 <p>КОМПАНИЯ ООО COMPANY С ОПЫТОМ РАБОТЫ БОЛЕЕ 10 ЛЕТ ПРЕДЛАГАЕТ ВАМ СВОИ УСЛУГИ</p>
             </div>
             <div class="about_us_button">
-                <a href="#" class="button">Список услуг</a>
+                <a href="#serv" class="button">Список услуг</a>
             </div>
         </article>
         <article class="our_advantages">
@@ -150,6 +152,87 @@
                 <a href="#">Отзывы</a>
             </div>
         </article>
+        <article class="our_services" id="serv">
+            <div class="serviсe_title">
+                <p>НАШИ УСЛУГИ</p>
+            </div>
+            <section>
+                <div class="service_name serv1">
+                    <p>1.РЕМОНТ ГИДРОСКУТЕРОВ</p>
+                </div>
+                <div class="service_list list1">
+                    <p>Сборка и наладка</p>
+                    <p>Диагностика неисправностей</p>
+                    <p>Постгарантийное и сервисное обслуживание</p>
+                    <p>Замена ресурсных деталей и механизмов</p>
+                </div>
+            </section>
+            <section>
+                <div class="service_name serv2">
+                    <p>2.РЕМОНТ МУСОРОВОЗОВ</p>
+                </div>
+                <div class="service_list list2">
+                    <p>Сборка и наладка</p>
+                    <p>Диагностика неисправностей</p>
+                    <p>Постгарантийное и сервисное обслуживание</p>
+                    <p>Замена ресурсных деталей и механизмов</p>
+                </div>
+            </section>
+            <section>
+                <div class="service_name serv2">
+                    <p>3.РЕМОНТ АВТОМОБИЛЕЙ</p>
+                </div>
+                <div class="service_list list2">
+                    <p>Сборка и наладка</p>
+                    <p>Диагностика неисправностей</p>
+                    <p>Постгарантийное и сервисное обслуживание</p>
+                    <p>Замена ресурсных деталей и механизмов</p>
+                </div>
+            </section>
+            <section>
+                <div class="service_name serv1">
+                    <p>4.РЕМОНТ МОТОЦИКЛОВ</p>
+                </div>
+                <div class="service_list list1">
+                    <p>Сборка и наладка</p>
+                    <p>Диагностика неисправностей</p>
+                    <p>Постгарантийное и сервисное обслуживание</p>
+                    <p>Замена ресурсных деталей и механизмов</p>
+                </div>
+            </section>
+        </article>
+        <article class="contacts">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2348.90818714297!2d27.468819015915326!3d53.93337498010624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbc51e0975cd99%3A0xb213669e4eeb5400!2z0YPQuy4g0JjQu9GM0Y_QvdGB0LrQsNGPIDgsINCc0LjQvdGB0Lo!5e0!3m2!1sru!2sby!4v1548866144413"  frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="phones">
+                <div class="phone_numbers">
+                    <p>OOO Company</p>
+                    <p>Минск, Мельникайте, 23</p>
+                    <a href="tel:+375295533376">+375(29)55-333-76</a>
+                    <a href="tel:+375295533376">+375(29)55-333-76</a>
+                </div>
+                <div class="order_call">
+                    <a href="#">Заказать&nbsp;звонок</a>
+                </div>
+            </div>
+        </article>
+        <article class="call_order">//form for back call
+            <div class="order_call_form">
+                <div class="order_call_title">Оставьте Ваши данные и мы перезвоним Вам!</div>
+                <a class="exit"></a>
+                <form class="call" method="post" type="text/plain" action="#">
+                    <input id="call_name" type="text" placeholder="Как Вас зовут" required>
+                    <input id="call_number" type="text" placeholder="Контактный телефон" required>
+                    <input class="call_button" type="submit" value="Пререзвоните мне">
+                </form>
+            </div>
+        </article>
+        <article class="overlay">//shadow behind form for back call
+
+        </article>
     </div>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="js.file.js"></script>
 </body>
 </html>
