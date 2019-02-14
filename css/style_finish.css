@@ -639,8 +639,7 @@ section {
   flex-flow: column;
   -webkit-flex-flow: column;
   justify-content: center;
-  -webkit-justify-content: center;
-  margin-bottom: 2%; }
+  -webkit-justify-content: center; }
   @media all and (min-width: 770px) {
     .phones {
       position: absolute;
@@ -648,7 +647,7 @@ section {
       right: 0;
       width: 40%;
       height: 100%;
-      z-index: 999;
+      z-index: 100;
       margin-top: 0;
       background-color: grey; } }
 
@@ -683,5 +682,84 @@ section {
   @media all and (min-width: 770px) {
     .phone_numbers {
       font-size: 2vw; } }
+
+.call_order {
+  flex-flow: column;
+  -webkit-flex-flow: column;
+  background-color: cadetblue;
+  width: calc(100% - 7.1% - 7.1%);
+  margin-left: 7.1%;
+  margin-right: 7.1%;
+  justify-content: center;
+  -webkit-justify-content: center;
+  font-size: 2vw;
+  padding: 4%;
+  display: none;
+  margin-top: 0;
+  z-index: 150;
+  position: fixed;
+  top: 10%;
+  left: 0; }
+
+.order_call_title {
+  margin-bottom: 2%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 2.5vw;
+  position: relative; }
+  .order_call_title .exit {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 5%;
+    padding-bottom: 0.6%; }
+  .order_call_title .exit:after {
+    content: 'x';
+    color: white;
+    font-size: 2.5vw; }
+
+.call {
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: column;
+  -webkit-flex-flow: column;
+  justify-content: center;
+  -webkit-justify-content: center; }
+
+#call_name, #call_number {
+  width: 72%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-bottom: 2%;
+  padding-left: 1%;
+  margin-left: auto;
+  margin-right: auto; }
+  #call_name:hover, #call_number:hover {
+    background-color: coral;
+    color: white; }
+
+.call_button {
+  margin-left: auto;
+  margin-right: auto;
+  width: 28%;
+  border-radius: 30%;
+  background-color: coral;
+  padding: 2%;
+  font-size: 2vw; }
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.7;
+  filter: alpha();
+  z-index: 120;
+  display: none; }
 
 /*# sourceMappingURL=style_finish.css.map */

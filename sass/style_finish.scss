@@ -460,7 +460,7 @@ section{
   @include flex;
   @include flex-flow-column;
   @include justify-content;
-  margin-bottom: 2%;
+  //margin-bottom: 2%;
 
   @media all and (min-width: 770px) {
     position: absolute;
@@ -468,7 +468,7 @@ section{
     right: 0;
     width: 40%;
     height: 100%;
-    z-index: 999;
+    z-index: 100;
     margin-top: 0;
     background-color: $background-color-dark;
   }
@@ -508,4 +508,86 @@ section{
   @media all and (min-width: 770px) {
     font-size: 2vw;
   }
+}
+//form for back call
+.call_order{
+  //@include flex;
+  @include flex-flow-column;
+  background-color: $background-color-cadetblue;
+  width: calc(100% - 7.1% - 7.1%);
+  margin-left: 7.1%;
+  margin-right: 7.1%;
+  @include justify-content;
+  font-size: 2vw;
+  padding: 4%;
+  display: none;
+  margin-top: 0;
+  z-index: 150;
+  position: fixed;
+  top: 10%;
+  left: 0;
+
+}
+.order_call_title{
+  margin-bottom: 2%;
+  text-align: center;
+  color: $font-color-white;
+  font-weight: bold;
+  font-size: 2.5vw;
+  position: relative;
+
+    .exit {
+      position: absolute;
+      top: 0;
+      right: 5%;
+      border: 2px solid $font-color-white;
+      border-radius: 50%;
+      width: 5%;
+      padding-bottom: 0.6%;
+    }
+      .exit:after{
+      content: 'x';
+      color: $font-color-white;
+        font-size: 2.5vw;
+    }
+}
+.call{ //form
+  @include flex;
+  @include flex-flow-column;
+  @include justify-content;
+}
+#call_name, #call_number{
+  width: 72%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-bottom: 2%;
+  padding-left: 1%;
+  margin-left: auto;
+  margin-right: auto;
+
+      &:hover{
+        background-color: $background-color-coral;
+        color: white;
+      }
+}
+.call_button{
+  margin-left: auto;
+  margin-right: auto;
+  width: 28%;
+  border-radius: 30%;
+  background-color: $background-color-coral;
+  padding: 2%;
+  font-size: 2vw;
+}
+.overlay{ //подложка, которую пока не видно
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $font-color-black;
+  opacity: 0.7;
+  filter: alpha();
+  z-index: 120;
+  display: none;
 }
